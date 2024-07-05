@@ -1,9 +1,11 @@
-#### CompanyController: Gerencia empresas.
-#### WorkerController: Gerencia trabalhadores.
-#### ActivityController: Gerencia atividades.
-#### EquipmentController: Gerencia equipamentos.
-#### RoleController: Gerencia cargos.
-#### ActivityWorkerController: Gerencia a relação entre atividades e trabalhadores.
+### API
+
+- CompanyController: Gerencia empresas.
+- WorkerController: Gerencia trabalhadores.
+- ActivityController: Gerencia atividades.
+- EquipmentController: Gerencia equipamentos.
+- RoleController: Gerencia cargos.
+- ActivityWorkerController: Gerencia a relação entre atividades e trabalhadores.
 
 ### Instalação de Dependências
 
@@ -27,4 +29,8 @@
    ```sh 
    adonis serve --dev
    ```
-### O servidor estará rodando em http://localhost:3333.
+### O servidor estará rodando em http://localhost:3333
+
+#Rotas
+
+![](../frontend/images/routes.png)

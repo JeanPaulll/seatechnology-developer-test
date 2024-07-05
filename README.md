@@ -34,7 +34,11 @@ Este projeto é composto por um front-end e um back-end. O front-end foi desenvo
    ```sh 
    adonis serve --dev
    ```
-### O servidor estará rodando em http://localhost:3333.
+### O servidor estará rodando em http://localhost:3333
+
+## Rotas api
+
+![](./frontend/images/routes.png)
 
 ## Configuração do Frontend
 
