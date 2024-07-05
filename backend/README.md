@@ -1,31 +1,30 @@
-# Adonis fullstack application
+#### CompanyController: Gerencia empresas.
+#### WorkerController: Gerencia trabalhadores.
+#### ActivityController: Gerencia atividades.
+#### EquipmentController: Gerencia equipamentos.
+#### RoleController: Gerencia cargos.
+#### ActivityWorkerController: Gerencia a relação entre atividades e trabalhadores.
 
-This is the fullstack boilerplate for AdonisJs, it comes pre-configured with.
+### Instalação de Dependências
 
-1. Bodyparser
-2. Session
-3. Authentication
-4. Web security middleware
-5. CORS
-6. Edge template engine
-7. Lucid ORM
-8. Migrations and seeds
+1. Navegue até o diretório do backend:
+   ```sh
+   cd backend
+   npm install
+   cp .env.example .env
+   ```
 
-## Setup
+2. Para criar as tabelas no banco de dados, execute as migrações:
 
-Use the adonis command to install the blueprint
-
-```bash
-adonis new yardstick
-```
-
-or manually clone the repo and then run `npm install`.
-
-
-### Migrations
-
-Run the following command to run startup migrations.
-
-```js
-adonis migration:run
-```
+   ```sh 
+   adonis migration:run
+   ```
+3. Para popular o banco de dados com dados iniciais, execute os seeds:
+    ```sh 
+    adonis seed 
+    ```
+4. Para iniciar o servidor:
+   ```sh 
+   adonis serve --dev
+   ```
+### O servidor estará rodando em http://localhost:3333.

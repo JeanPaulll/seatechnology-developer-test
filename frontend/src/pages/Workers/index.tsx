@@ -42,7 +42,7 @@ function Workers() {
     return (
         <React.Fragment>
             <div className='workers-page'>
-                <img src={ShadowIcon} alt="shadow" className="shadow-image"/>
+                {/*<img src={ShadowIcon} alt="shadow" className="shadow-image"/>*/}
                 <div className="companies-section">
                     {list.map((company, index) => (
                             <React.Fragment key={index}>
@@ -60,8 +60,9 @@ function Workers() {
                 <div className="workers-section">
                     <div className="company-description">
                         <span>{list[selectedCompany].description}</span>
+                        <img src={ShadowIcon} alt="shadow" className="shadow-image-description"/>
                     </div>
-                    {isRegistrationMode ? <WorkerForm /> : <WorkersInfo />}
+                    {isRegistrationMode ? <WorkerForm/> : <WorkersInfo />}
                 </div>
                 {!isRegistrationMode && <NextButton />}
             </div>
