@@ -3,7 +3,7 @@
 const Company = use('App/Models/Company')
 
 class CompanySeeder {
-  async run () {
+  async run() {
     const companies = [
       {
         id: 1,

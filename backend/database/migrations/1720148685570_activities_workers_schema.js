@@ -3,7 +3,7 @@
 const Schema = use('Schema')
 
 class ActivitiesWorkersTableSchema extends Schema {
-  up () {
+  up() {
     this.create('activities_workers', (table) => {
       table.increments()
       table.integer('activityId').unsigned().references('id').inTable('activities').onDelete('CASCADE')
@@ -14,7 +14,7 @@ class ActivitiesWorkersTableSchema extends Schema {
     })
   }
 
-  down () {
+  down() {
     this.drop('activities_workers')
   }
 }

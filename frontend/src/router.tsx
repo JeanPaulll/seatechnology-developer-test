@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
 
 import Workers from "./pages/Workers";
 import Home from "./pages/Home";
@@ -12,38 +12,38 @@ import SideBar from "./components/SideBar";
 
 function AppRoutes() {
 
-  return (
-    <BrowserRouter>
-      <SideBar />
-      <Routes>
-        <Route
-          path="/"
-          element={<Workers />}
-        />
-        <Route
-          path="/home"
-          element={<Home />}
-        />
-        <Route
-          path="/history"
-          element={<History />}
-        />
-        <Route
-          path="/notification"
-          element={<Notification />}
-        />
-        <Route
-          path="/organization"
-          element={<Organization />}
-        />
-        <Route
-          path="/profile"
-          element={<Profile />}
-        />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </BrowserRouter>
-  );
+    return (
+        <BrowserRouter>
+            <SideBar/>
+            <Routes>
+                <Route
+                    path="/"
+                    element={<Workers/>}
+                />
+                <Route
+                    path="/home"
+                    element={<Home/>}
+                />
+                <Route
+                    path="/history"
+                    element={<History/>}
+                />
+                <Route
+                    path="/notification"
+                    element={<Notification/>}
+                />
+                <Route
+                    path="/organization"
+                    element={<Organization/>}
+                />
+                <Route
+                    path="/profile"
+                    element={<Profile/>}
+                />
+                <Route path="*" element={<NotFound/>}/>
+            </Routes>
+        </BrowserRouter>
+    );
 }
 
 export default AppRoutes;

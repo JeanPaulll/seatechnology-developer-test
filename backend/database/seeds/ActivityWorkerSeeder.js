@@ -3,9 +3,9 @@
 const Database = use('Database')
 
 class ActivityWorkerSeeder {
-  async run () {
+  async run() {
     const activitiesWorkers = [
-      { id: 1, activityId: 2, workerId: 2, companyId: 2, equipmentsId: JSON.stringify([2]) }
+      {id: 1, activityId: 2, workerId: 2, companyId: 2, equipmentsId: JSON.stringify([2])}
     ]
 
     try {

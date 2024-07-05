@@ -1,22 +1,29 @@
 import React from 'react'
 import "./styles.scss";
-import { useDispatch, useSelector } from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import CompanyBadge from '../../components/CompanyBadge';
 import DashedLine from '../../components/DashedLine';
-import { setDeleteModalOpen, setSelectedCompany } from '../../store/reducers/company';
+import {setDeleteModalOpen, setSelectedCompany} from '../../store/reducers/company';
 import NextButton from '../../components/NextButton';
 import WorkersInfo from '../../components/WorkersInfo';
 import WorkerForm from '../../components/WorkerForm';
-import { Modal } from 'antd';
-import { AnyAction, ThunkDispatch } from '@reduxjs/toolkit';
-import { deleteWorker } from '../../store/actions/company';
+import {Modal} from 'antd';
+import {AnyAction, ThunkDispatch} from '@reduxjs/toolkit';
+import {deleteWorker} from '../../store/actions/company';
 import ShadowIcon from '../../icons/Shadow.svg';
 
 type AppDispatch = ThunkDispatch<RootState, void, AnyAction>;
 
 function Workers() {
     const dispatch: AppDispatch = useDispatch();
-    const { list, selectedCompany, isRegistrationMode, isDeleteModalOpen, workerId, isLoading } = useSelector((state: RootState) => state.company);
+    const {
+        list,
+        selectedCompany,
+        isRegistrationMode,
+        isDeleteModalOpen,
+        workerId,
+        isLoading
+    } = useSelector((state: RootState) => state.company);
 
     const selectCompany = (index: number) => {
         dispatch(setSelectedCompany(index));
@@ -46,7 +53,7 @@ function Workers() {
                 <div className="companies-section">
                     {list.map((company, index) => (
                             <React.Fragment key={index}>
-                                {index !== 0 && <DashedLine />}
+                                {index !== 0 && <DashedLine/>}
                                 <CompanyBadge
                                     name={company.name}
                                     isRegistrationDone={company.isRegistrationDone}
@@ -62,9 +69,9 @@ function Workers() {
                         <span>{list[selectedCompany].description}</span>
                         <img src={ShadowIcon} alt="shadow" className="shadow-image-description"/>
                     </div>
-                    {isRegistrationMode ? <WorkerForm/> : <WorkersInfo />}
+                    {isRegistrationMode ? <WorkerForm/> : <WorkersInfo/>}
                 </div>
-                {!isRegistrationMode && <NextButton />}
+                {!isRegistrationMode && <NextButton/>}
             </div>
             <Modal
                 title="Deletar funcionário"

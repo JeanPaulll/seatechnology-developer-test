@@ -16,13 +16,13 @@ export function formatarCPF(cpf: string): string {
 
 export function formatRG(rg: string): string {
     const cleanRG = rg.replace(/\D/g, '');
-  
+
     if (cleanRG.length !== 7) {
-      return rg;
+        return rg;
     }
-  
+
     // Formata o RG no padrão XX.XXX.X-X
     const formattedRG = `${cleanRG.slice(0, 2)}.${cleanRG.slice(2, 5)}.${cleanRG.slice(5, 6)}-${cleanRG.slice(6)}`;
-  
+
     return formattedRG;
 }

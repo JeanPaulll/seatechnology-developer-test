@@ -1,9 +1,9 @@
 import React from 'react'
 
 function Organization() {
-  return (
-    <div>Organization</div>
-  )
+    return (
+        <div className='under-construction'>Organization</div>
+    )
 }
 
 export default Organization

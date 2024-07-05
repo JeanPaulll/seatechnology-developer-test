@@ -29,6 +29,7 @@
    ```sh 
    adonis serve --dev
    ```
+
 ### O servidor estará rodando em http://localhost:3333
 
 #Rotas

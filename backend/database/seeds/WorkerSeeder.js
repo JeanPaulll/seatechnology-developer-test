@@ -3,7 +3,7 @@
 const Worker = use('App/Models/Worker')
 
 class WorkerSeeder {
-  async run () {
+  async run() {
     const workers = [
       {
         id: 2,

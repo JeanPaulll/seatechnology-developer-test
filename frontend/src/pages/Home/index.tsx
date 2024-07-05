@@ -1,9 +1,9 @@
 import React from 'react'
 
 function Home() {
-  return (
-    <div>index</div>
-  )
+    return (
+        <div className='under-construction'>index</div>
+    )
 }
 
 export default Home;
