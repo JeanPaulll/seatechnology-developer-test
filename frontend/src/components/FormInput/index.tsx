@@ -23,6 +23,21 @@ const datePickerStyle: React.CSSProperties = {
     borderRadius: '10px',
 }
 
+/**
+ * @param type
+ * @param mask
+ * @param placeholder
+ * @param label
+ * @param items
+ * @param value
+ * @param onChange
+ * @param name
+ * @param id
+ * @param dateValue
+ * @constructor
+ * @author Jean Paul <jeanpaulwebb@gmail.com>
+ * @date 05/07/2024
+ */
 function FormInput({
                        type,
                        mask,

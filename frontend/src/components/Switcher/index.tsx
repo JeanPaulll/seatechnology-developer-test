@@ -7,8 +7,15 @@ interface ISwitcher {
     checked: boolean;
 }
 
+/**
+ * @param message
+ * @param onChange
+ * @param checked
+ * @constructor
+ * @author Jean Paul <jeanpaulwebb@gmail.com>
+ * @date 05/07/2024
+ */
 function Switcher({message, onChange, checked}: ISwitcher) {
-
     return (
         <Space size={12}>
             {message}

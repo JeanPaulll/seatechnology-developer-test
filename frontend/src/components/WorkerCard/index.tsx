@@ -1,7 +1,7 @@
 import React from 'react';
 import "./styles.scss";
 import {Button, Dropdown, MenuProps, Space} from 'antd';
-import {formatarCPF} from '../../utils';
+import {formatCpf} from '../../utils';
 import EtcIcon from '../../icons/Etc.svg';
 import {useDispatch} from 'react-redux';
 import {setDeleteModalOpen, setRegistrationMode} from '../../store/reducers/company';
@@ -21,9 +21,14 @@ const buttonStyles: React.CSSProperties = {
     fontWeight: 700,
 }
 
+/**
+ * @param worker
+ * @constructor
+ * @author Jean Paul <jeanpaulwebb@gmail.com>
+ * @date 05/07/2024
+ */
 function WorkerCard({worker}: IWorkerCard) {
     const dispatch = useDispatch();
-
     const items: MenuProps['items'] = [
         {
             key: 1,
@@ -50,14 +55,13 @@ function WorkerCard({worker}: IWorkerCard) {
             }
         }
     ];
-
     return (
         <div className='worker-card'>
             <Space direction='vertical' style={{padding: '12px'}}>
                 <span className='worker-name'>{worker.name}</span>
                 <Space size={12}>
                     <div className="info-badge">
-                        {formatarCPF(worker.cpf)}
+                        {formatCpf(worker.cpf)}
                     </div>
                     {worker.activities.map((activity, index) => (
                         <div className="info-badge" key={`act${index}`}>

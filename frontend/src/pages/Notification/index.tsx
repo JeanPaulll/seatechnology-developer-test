@@ -2,7 +2,7 @@ import React from 'react'
 
 function Notification() {
     return (
-        <div>Notification</div>
+        <div className='under-construction'>Notification</div>
     )
 }
 

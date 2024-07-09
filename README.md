@@ -19,6 +19,7 @@ desenvolvido em AdonisJS, construção de uma API.
    ```sh
    cd backend
    npm install
+   npm install -g @adonisjs/cli
    cp .env.example .env
    ```
 
@@ -35,6 +36,7 @@ desenvolvido em AdonisJS, construção de uma API.
    ```sh 
    adonis serve --dev
    ```
+Para testar uma rota: GET http://127.0.0.1:3333/companies   
 
 ### O servidor estará rodando em http://localhost:3333
 

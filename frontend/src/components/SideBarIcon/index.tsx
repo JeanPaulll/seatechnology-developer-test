@@ -6,10 +6,13 @@ interface ISideBarIcon {
     icon: string;
     url: string;
 }
-
+/**
+ * @constructor
+ * @author Jean Paul <jeanpaulwebb@gmail.com>
+ * @date 05/07/2024
+ */
 function SideBarIcon({icon, url}: ISideBarIcon) {
     const {pathname} = useLocation();
-
     const isActive = pathname === url;
     return (
         <Link to={url}>

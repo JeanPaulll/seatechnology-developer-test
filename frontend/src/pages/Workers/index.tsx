@@ -14,6 +14,11 @@ import ShadowIcon from '../../icons/Shadow.svg';
 
 type AppDispatch = ThunkDispatch<RootState, void, AnyAction>;
 
+/**
+ * @author Jean Paul <jeanpaulwebb@gmail.com>
+ * @date 05/07/2024
+ * @constructor
+ */
 function Workers() {
     const dispatch: AppDispatch = useDispatch();
     const {
@@ -49,7 +54,6 @@ function Workers() {
     return (
         <React.Fragment>
             <div className='workers-page'>
-                <img src={ShadowIcon} alt="shadow" className="shadow-image"/>
                 <div className="companies-section">
                     {list.map((company, index) => (
                             <React.Fragment key={index}>
@@ -67,6 +71,7 @@ function Workers() {
                 <div className="workers-section">
                     <div className="company-description">
                         <span>{list[selectedCompany].description}</span>
+                        <img src={ShadowIcon} alt="shadow" className="shadow-image"/>
                     </div>
                     {isRegistrationMode ? <WorkerForm/> : <WorkersInfo/>}
                 </div>

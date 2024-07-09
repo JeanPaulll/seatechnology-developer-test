@@ -26,7 +26,19 @@ const buttonStyles: React.CSSProperties = {
     width: '100%',
 }
 
-
+/**
+ * @param index
+ * @param onChange
+ * @param value
+ * @param handleAddEquipments
+ * @param equipmentsId
+ * @param handleEquipmentChange
+ * @param getEquipmentValue
+ * @constructor
+ * @author Jean Paul <jeanpaulwebb@gmail.com>
+ * @date 05/07/2024
+ * ActivityInput
+ */
 function ActivityInput({
                            index,
                            onChange,

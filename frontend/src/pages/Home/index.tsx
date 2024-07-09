@@ -2,7 +2,7 @@ import React from 'react'
 
 function Home() {
     return (
-        <div>index</div>
+        <div className='under-construction'>Página Inicial</div>
     )
 }
 

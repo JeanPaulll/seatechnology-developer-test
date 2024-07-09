@@ -13,6 +13,11 @@ const buttonStyles: React.CSSProperties = {
     fontWeight: 700,
 }
 
+/**
+ * @constructor
+ * @author Jean Paul <jeanpaulwebb@gmail.com>
+ * @date 05/07/2024
+ */
 function NextButton() {
     return (
         <Button style={buttonStyles}>Próximo passo</Button>

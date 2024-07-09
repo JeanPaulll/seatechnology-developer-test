@@ -2,7 +2,7 @@ import React from 'react'
 
 function Organization() {
     return (
-        <div>Organization</div>
+        <div className='under-construction'>Organization</div>
     )
 }
 

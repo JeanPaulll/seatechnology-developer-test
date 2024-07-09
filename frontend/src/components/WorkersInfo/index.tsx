@@ -40,29 +40,30 @@ const activeButton: React.CSSProperties = {
 
 type AppDispatch = ThunkDispatch<RootState, void, AnyAction>;
 
+/**
+ * @constructor
+ * @author Jean Paul <jeanpaulwebb@gmail.com>
+ * @date 05/07/2024
+ */
 function WorkersInfo() {
     const dispatch: AppDispatch = useDispatch();
     const {list, selectedCompany, isActiveFilter} = useSelector((state: RootState) => state.company);
-
     const handleSwitcherAction = (checked: boolean) => {
         dispatch(updateCompany({
             id: list[selectedCompany].id,
             isRegistrationDone: checked,
         }))
     }
-
     const handleRegistrationMode = () => {
         dispatch(setRegistrationMode({
             isRegistrationMode: true,
             worker: null,
         }));
     }
-
     const activeStyle = isActiveFilter ? activeButton : {}
     const activeWorkers = list[selectedCompany].workers.filter((worker) => worker.isActive);
     const allWorkers = list[selectedCompany].workers;
     const workers = isActiveFilter ? activeWorkers : allWorkers;
-
     return (
         <div className='workers-info'>
             <div className="title">Funcionário(s)</div>

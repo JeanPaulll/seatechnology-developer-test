@@ -1,6 +1,11 @@
 import dayjs from 'dayjs';
 import * as Yup from 'yup';
 
+/**
+ * @author Jean Paul <jeanpaulwebb@gmail.com>
+ * @date 05/07/2024
+ * Utils
+ */
 const CPFRegex = /^\d{3}\.\d{3}\.\d{3}-\d{2}$/;
 const RGRegex = /^\d{2}\.\d{3}\.\d{1}-\d{1}$/;
 

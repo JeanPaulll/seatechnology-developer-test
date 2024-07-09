@@ -2,7 +2,7 @@ import React from 'react'
 
 function History() {
     return (
-        <div>index</div>
+        <div className='under-construction'>index</div>
     )
 }
 

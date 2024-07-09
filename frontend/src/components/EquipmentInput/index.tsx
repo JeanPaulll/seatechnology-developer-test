@@ -17,6 +17,16 @@ const selectStyles: React.CSSProperties = {
     borderRadius: '10px',
 }
 
+/**
+ * @param id
+ * @param onChange
+ * @param value
+ * @param index
+ * @param activityIndex
+ * @constructor
+ * @author Jean Paul <jeanpaulwebb@gmail.com>
+ * @date 05/07/2024
+ */
 function EquipmentInput({id, onChange, value, index, activityIndex}: IEquipmentInput) {
     const {list, selectedCompany} = useSelector((state: RootState) => state.company);
 

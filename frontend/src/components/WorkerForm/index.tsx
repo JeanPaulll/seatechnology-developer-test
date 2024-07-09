@@ -11,7 +11,7 @@ import {workerSchema} from '../../utils/schemas';
 import dayjs from 'dayjs';
 import {createWorker, updateWorker} from '../../store/actions/company';
 import {AnyAction, ThunkDispatch} from '@reduxjs/toolkit';
-import {formatarCPF, formatRG} from '../../utils';
+import {formatCpf, formatRG} from '../../utils';
 
 const genderOptions: ISelectOptionInput[] = [
     {
@@ -74,28 +74,30 @@ const buttonStyles: React.CSSProperties = {
 
 type AppDispatch = ThunkDispatch<RootState, void, AnyAction>;
 
+/**
+ * @constructor
+ * @author Jean Paul <jeanpaulwebb@gmail.com>
+ * @date 05/07/2024
+ */
 function WorkerForm() {
     const dispatch: AppDispatch = useDispatch();
     const [fileName, setFileName] = useState<string>("");
     const {list, selectedCompany, selectedWorker} = useSelector((state: RootState) => state.company);
-
     const handleRegistrationMode = () => {
         dispatch(setRegistrationMode({
             isRegistrationMode: false,
             worker: null,
         }));
     }
-
     const roles = list[selectedCompany].roles.map((role) => {
         return {
             value: role.id,
             label: role.name,
         }
     });
-
     const currentInitialValues: IWorkerFormData = selectedWorker ? {
         birthdate: dayjs(selectedWorker.birthdate),
-        cpf: formatarCPF(selectedWorker.cpf),
+        cpf: formatCpf(selectedWorker.cpf),
         companyId: selectedWorker.companyId,
         isActive: selectedWorker.isActive,
         isMale: selectedWorker.isMale,
@@ -114,7 +116,6 @@ function WorkerForm() {
         }),
         id: selectedWorker.id,
     } : initialValues;
-
     const onSubmit = (values: IWorkerFormData) => {
         const valuesToSubmit: IWorkerFormData = {
             ...values,
@@ -130,48 +131,38 @@ function WorkerForm() {
 
         dispatch(createWorker(valuesToSubmit));
     }
-
     const formik = useFormik({
         initialValues: currentInitialValues,
         onSubmit,
         validationSchema: workerSchema,
         enableReinitialize: true,
     });
-
     const handleAddActivity = () => {
         formik.setFieldValue('activities', [...formik.values.activities, defaultActivity]);
     }
-
     const handleAddEquipments = (index: number) => {
         const equipmentId = [...formik.values.activities[index].equipmentsId];
         equipmentId.push(0);
         formik.setFieldValue(`activities[${index}].equipmentsId`, equipmentId);
     }
-
     const handleActivityChange = (value: number, index: number) => {
         formik.setFieldValue(`activities[${index}].activityId`, value);
     }
-
     const handleEquipmentChange = (equipmentId: number, activityIndex: number, equipmentIndex: number) => {
         formik.setFieldValue(`activities[${activityIndex}].equipmentsId[${equipmentIndex}]`, equipmentId);
     }
-
     const getEquipmentValue = (activityIndex: number, equipmentIndex: number) => {
         return formik.values.activities[activityIndex].equipmentsId[equipmentIndex];
     }
-
     const handleRoleChange = (roleId: number) => {
         formik.setFieldValue('role', roleId);
     }
-
     const handleDateChange: DatePickerProps['onChange'] = (date) => {
         formik.setFieldValue('birthdate', date);
     }
-
     const handleGenderChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         formik.setFieldValue('isMale', Boolean(Number(event.target.value)))
     }
-
     const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         if (event.target.files) {
             const urlToSave = URL.createObjectURL(event.target.files[0]);
@@ -179,7 +170,6 @@ function WorkerForm() {
             setFileName(event.target.files[0].name);
         }
     }
-
     return (
         <div className="worker-form">
             <div className="form-header">

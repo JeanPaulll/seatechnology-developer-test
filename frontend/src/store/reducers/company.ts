@@ -1,5 +1,10 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 
+/**
+ * @author Jean Paul <jeanpaulwebb@gmail.com>
+ * @date 05/07/2024
+ * Reducers
+ */
 import {
     createWorker,
     deleteWorker,

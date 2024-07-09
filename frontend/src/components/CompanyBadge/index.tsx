@@ -10,6 +10,16 @@ interface ICompanyBadge {
     onClick: VoidFunction;
 }
 
+/**
+ * @param name
+ * @param isRegistrationDone
+ * @param isActive
+ * @param onClick
+ * @constructor
+ * @author Jean Paul <jeanpaulwebb@gmail.com>
+ * @date 05/07/2024
+ * CompanyBadge
+ */
 function CompanyBadge({name, isRegistrationDone, isActive, onClick}: ICompanyBadge) {
     return (
         <div className='badge-wrapper' onClick={onClick}>

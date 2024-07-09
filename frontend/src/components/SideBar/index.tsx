@@ -48,6 +48,11 @@ const MenuItems: IMenuItem[] = [
     },
 ]
 
+/**
+ * @constructor
+ * @author Jean Paul <jeanpaulwebb@gmail.com>
+ * @date 05/07/2024
+ */
 function SideBar() {
     return (
         <div className="sidebar">

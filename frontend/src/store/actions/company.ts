@@ -1,5 +1,9 @@
 import {createAsyncThunk} from "@reduxjs/toolkit";
-
+/**
+ * @author Jean Paul <jeanpaulwebb@gmail.com>
+ * @date 05/07/2024
+ * Actions
+ */
 import * as TYPES from "../types";
 import dayjs from "dayjs";
 import {api} from "../api";
