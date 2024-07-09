@@ -1,4 +1,4 @@
-import { Space, Switch } from 'antd';
+import {Space, Switch} from 'antd';
 import React from 'react'
 
 interface ISwitcher {
@@ -7,7 +7,7 @@ interface ISwitcher {
     checked: boolean;
 }
 
-function Switcher({ message, onChange, checked}: ISwitcher) {
+function Switcher({message, onChange, checked}: ISwitcher) {
 
     return (
         <Space size={12}>
@@ -17,7 +17,7 @@ function Switcher({ message, onChange, checked}: ISwitcher) {
                 checked={checked}
                 checkedChildren="Sim"
                 unCheckedChildren="Não"
-                style={{ backgroundColor: '#4FA1C1' }}
+                style={{backgroundColor: '#4FA1C1'}}
             />
         </Space>
     )

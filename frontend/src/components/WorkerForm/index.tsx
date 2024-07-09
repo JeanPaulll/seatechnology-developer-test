@@ -1,17 +1,17 @@
-import React, { useState } from 'react'
+import React, {useState} from 'react'
 import "./styles.scss";
-import { Button, Col, DatePickerProps, Row, Space, Switch } from 'antd';
+import {Button, Col, DatePickerProps, Row, Space, Switch} from 'antd';
 import BackIcon from "../../icons/Back.svg";
-import { useDispatch, useSelector } from 'react-redux';
-import { setRegistrationMode } from '../../store/reducers/company';
-import { useFormik } from 'formik';
+import {useDispatch, useSelector} from 'react-redux';
+import {setRegistrationMode} from '../../store/reducers/company';
+import {useFormik} from 'formik';
 import FormInput from '../FormInput';
 import ActivityInput from '../ActivityInput';
-import { workerSchema } from '../../utils/schemas';
+import {workerSchema} from '../../utils/schemas';
 import dayjs from 'dayjs';
-import { createWorker, updateWorker } from '../../store/actions/company';
-import { AnyAction, ThunkDispatch } from '@reduxjs/toolkit';
-import { formatRG, formatarCPF } from '../../utils';
+import {createWorker, updateWorker} from '../../store/actions/company';
+import {AnyAction, ThunkDispatch} from '@reduxjs/toolkit';
+import {formatarCPF, formatRG} from '../../utils';
 
 const genderOptions: ISelectOptionInput[] = [
     {
@@ -77,7 +77,7 @@ type AppDispatch = ThunkDispatch<RootState, void, AnyAction>;
 function WorkerForm() {
     const dispatch: AppDispatch = useDispatch();
     const [fileName, setFileName] = useState<string>("");
-    const { list, selectedCompany, selectedWorker } = useSelector((state: RootState) => state.company);
+    const {list, selectedCompany, selectedWorker} = useSelector((state: RootState) => state.company);
 
     const handleRegistrationMode = () => {
         dispatch(setRegistrationMode({
@@ -167,7 +167,7 @@ function WorkerForm() {
     const handleDateChange: DatePickerProps['onChange'] = (date) => {
         formik.setFieldValue('birthdate', date);
     }
-    
+
     const handleGenderChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         formik.setFieldValue('isMale', Boolean(Number(event.target.value)))
     }
@@ -197,29 +197,35 @@ function WorkerForm() {
                             checked={formik.values.isActive}
                             checkedChildren="Ativo"
                             unCheckedChildren="Inativo"
-                            style={{ backgroundColor: '#4FA1C1' }}
+                            style={{backgroundColor: '#4FA1C1'}}
                         />
                     </Space>
                 </div>
                 <div className="block">
                     <Row gutter={[25, 14]}>
                         <Col span={12}>
-                            <FormInput id="name" name="name" onChange={formik.handleChange} type='text' value={formik.values.name} label='Nome'/>
+                            <FormInput id="name" name="name" onChange={formik.handleChange} type='text'
+                                       value={formik.values.name} label='Nome'/>
                         </Col>
                         <Col span={12}>
-                            <FormInput id="isMale" name="isMale" onChange={handleGenderChange} type='option' value={Number(formik.values.isMale)} label='Sexo' items={genderOptions}/>
+                            <FormInput id="isMale" name="isMale" onChange={handleGenderChange} type='option'
+                                       value={Number(formik.values.isMale)} label='Sexo' items={genderOptions}/>
                         </Col>
                         <Col span={12}>
-                            <FormInput id="cpf" name="cpf" onChange={formik.handleChange} type='text' mask="999.999.999-99" value={formik.values.cpf} label='CPF'/>
+                            <FormInput id="cpf" name="cpf" onChange={formik.handleChange} type='text'
+                                       mask="999.999.999-99" value={formik.values.cpf} label='CPF'/>
                         </Col>
                         <Col span={12}>
-                            <FormInput id="birthdate" name="birthdate" onChange={handleDateChange} type='date' dateValue={formik.values.birthdate} label='Data de Nascimento'/>
+                            <FormInput id="birthdate" name="birthdate" onChange={handleDateChange} type='date'
+                                       dateValue={formik.values.birthdate} label='Data de Nascimento'/>
                         </Col>
                         <Col span={12}>
-                            <FormInput id="rg" name="rg" onChange={formik.handleChange} type='text' mask="99.999.9-9" value={formik.values.rg} label='RG'/>
+                            <FormInput id="rg" name="rg" onChange={formik.handleChange} type='text' mask="99.999.9-9"
+                                       value={formik.values.rg} label='RG'/>
                         </Col>
                         <Col span={12}>
-                            <FormInput id="role" name="role" onChange={handleRoleChange} type='select' value={formik.values.role} label='Cargo' items={roles}/>
+                            <FormInput id="role" name="role" onChange={handleRoleChange} type='select'
+                                       value={formik.values.role} label='Cargo' items={roles}/>
                         </Col>
                     </Row>
                 </div>
@@ -251,7 +257,8 @@ function WorkerForm() {
                         </label>
                     </Space>
                 </div>
-                <Button style={buttonStyles} disabled={!formik.isValid || !formik.dirty} onClick={() => formik.handleSubmit()}>Salvar</Button>
+                <Button style={buttonStyles} disabled={!formik.isValid || !formik.dirty}
+                        onClick={() => formik.handleSubmit()}>Salvar</Button>
             </div>
         </div>
     )
