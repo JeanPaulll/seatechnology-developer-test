@@ -1,6 +1,6 @@
 import React from 'react'
-import {Col, Select} from 'antd';
-import {useSelector} from 'react-redux';
+import { Col, Select } from 'antd';
+import { useSelector } from 'react-redux';
 
 interface IEquipmentInput {
     id: string;
@@ -17,8 +17,8 @@ const selectStyles: React.CSSProperties = {
     borderRadius: '10px',
 }
 
-function EquipmentInput({id, onChange, value, index, activityIndex}: IEquipmentInput) {
-    const {list, selectedCompany} = useSelector((state: RootState) => state.company);
+function EquipmentInput({ id, onChange, value, index, activityIndex }:IEquipmentInput) {
+    const { list, selectedCompany } = useSelector((state: RootState) => state.company);
 
     const equipments = list[selectedCompany].equipments.map((equipment) => ({
         value: equipment.id,

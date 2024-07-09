@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link, useLocation} from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import "./styles.scss";
 
 interface ISideBarIcon {
@@ -7,9 +7,9 @@ interface ISideBarIcon {
     url: string;
 }
 
-function SideBarIcon({icon, url}: ISideBarIcon) {
-    const {pathname} = useLocation();
-
+function SideBarIcon({ icon, url }: ISideBarIcon) {
+    const { pathname } = useLocation();
+    
     const isActive = pathname === url;
     return (
         <Link to={url}>

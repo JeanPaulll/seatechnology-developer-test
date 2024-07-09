@@ -1,17 +1,6 @@
-import {createSlice, PayloadAction} from "@reduxjs/toolkit";
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
-import {
-    createWorker,
-    deleteWorker,
-    getActivities,
-    getActivitiesWorkers,
-    getCompanies,
-    getEquipments,
-    getRoles,
-    getWorkers,
-    updateCompany,
-    updateWorker
-} from "../actions/company";
+import { createWorker, deleteWorker, getActivities, getActivitiesWorkers, getCompanies, getEquipments, getRoles, getWorkers, updateCompany, updateWorker } from "../actions/company";
 
 const initialState: CompanyState = {
     isLoading: false,
@@ -34,11 +23,11 @@ const companySlicer = createSlice({
             state.isRegistrationMode = false;
             state.selectedWorker = null;
         },
-        setRegistrationMode(state, action: PayloadAction<{ isRegistrationMode: boolean; worker: IWorker | null }>) {
+        setRegistrationMode(state, action: PayloadAction<{isRegistrationMode: boolean; worker: IWorker | null}>) {
             state.isRegistrationMode = action.payload.isRegistrationMode;
             state.selectedWorker = action.payload.worker;
         },
-        setDeleteModalOpen(state, action: PayloadAction<{ isDeleteModalOpen: boolean, workerId: number | null }>) {
+        setDeleteModalOpen(state, action: PayloadAction<{isDeleteModalOpen: boolean, workerId: number | null}>) {
             state.isDeleteModalOpen = action.payload.isDeleteModalOpen;
             state.workerId = action.payload.workerId;
         },
@@ -252,5 +241,5 @@ const companySlicer = createSlice({
     },
 });
 
-export const {setSelectedCompany, setRegistrationMode, setDeleteModalOpen, setIsActiveFilter} = companySlicer.actions;
+export const { setSelectedCompany, setRegistrationMode, setDeleteModalOpen, setIsActiveFilter } = companySlicer.actions;
 export default companySlicer.reducer;

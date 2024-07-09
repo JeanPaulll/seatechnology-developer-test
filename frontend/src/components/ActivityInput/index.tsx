@@ -1,6 +1,6 @@
-import {Button, Col, Row, Select, Space} from 'antd'
-import React, {useState} from 'react'
-import {useSelector} from 'react-redux'
+import { Button, Col, Row, Select, Space } from 'antd'
+import React, { useState } from 'react'
+import { useSelector } from 'react-redux'
 import "./styles.scss";
 import EquipmentInput from '../EquipmentInput';
 
@@ -27,16 +27,8 @@ const buttonStyles: React.CSSProperties = {
 }
 
 
-function ActivityInput({
-                           index,
-                           onChange,
-                           value,
-                           handleAddEquipments,
-                           equipmentsId,
-                           handleEquipmentChange,
-                           getEquipmentValue
-                       }: IActivityInput) {
-    const {list, selectedCompany} = useSelector((state: RootState) => state.company);
+function ActivityInput({ index, onChange, value, handleAddEquipments, equipmentsId, handleEquipmentChange, getEquipmentValue }: IActivityInput) {
+    const { list, selectedCompany } = useSelector((state: RootState) => state.company);
     const [useEPI, setUseEPI] = useState<boolean>(true);
 
     const activities = list[selectedCompany].activities.map((activity) => ({
@@ -82,10 +74,8 @@ function ActivityInput({
                     ))}
                     {useEPI && (
                         <Col span={6}>
-                            <Space
-                                style={{width: '100%', alignItems: 'center', justifyContent: 'center', height: '100%'}}>
-                                <Button type="text" onClick={() => handleAddEquipments(index)} style={buttonStyles}>Adicionar
-                                    EPI</Button>
+                            <Space style={{width: '100%', alignItems: 'center', justifyContent: 'center', height: '100%'}}>
+                                <Button type="text" onClick={() => handleAddEquipments(index)} style={buttonStyles}>Adicionar EPI</Button>
                             </Space>
                         </Col>
                     )}

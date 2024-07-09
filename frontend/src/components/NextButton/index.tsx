@@ -1,4 +1,4 @@
-import {Button} from 'antd'
+import { Button } from 'antd'
 import React from 'react'
 
 const buttonStyles: React.CSSProperties = {
@@ -14,9 +14,9 @@ const buttonStyles: React.CSSProperties = {
 }
 
 function NextButton() {
-    return (
-        <Button style={buttonStyles}>Próximo passo</Button>
-    )
+  return (
+    <Button style={buttonStyles}>Próximo passo</Button>
+  )
 }
 
 export default NextButton

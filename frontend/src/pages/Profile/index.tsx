@@ -1,9 +1,9 @@
 import React from 'react'
 
 function Profile() {
-    return (
-        <div className='under-construction'>Profile</div>
-    )
+  return (
+    <div>Profile</div>
+  )
 }
 
 export default Profile;

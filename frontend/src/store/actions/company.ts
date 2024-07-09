@@ -1,9 +1,9 @@
-import {createAsyncThunk} from "@reduxjs/toolkit";
+import { createAsyncThunk } from "@reduxjs/toolkit";
 
 import * as TYPES from "../types";
 import dayjs from "dayjs";
-import {api} from "../api";
-import {AxiosResponse} from "axios";
+import { api } from "../api";
+import { AxiosResponse } from "axios";
 
 interface IWorkerFormData {
     id?: number;
@@ -73,8 +73,8 @@ export const createWorker = createAsyncThunk<IWorker, IWorkerFormData>(TYPES.CRE
 });
 
 export const updateCompany = createAsyncThunk<ICompany, ICompanyUpdate>(TYPES.UPDATE_COMPANY, async (values) => {
-    const {id, isRegistrationDone} = values;
-    const response: AxiosResponse<ICompany> = await api.put(`/companies/${id}`, {isRegistrationDone});
+    const { id, isRegistrationDone } = values;
+    const response: AxiosResponse<ICompany> = await api.put(`/companies/${id}`, { isRegistrationDone });
     return response.data;
 });
 

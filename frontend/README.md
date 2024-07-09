@@ -38,7 +38,7 @@ Tecnologias utilizadas:
 
    ```sh 
    cd frontend
-   npm install ou yarn install
+   yarn install
    yarn start
    ```
 
