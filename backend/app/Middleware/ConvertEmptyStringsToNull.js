@@ -1,5 +1,9 @@
 'use strict'
 
+/**
+ * @author Jean Paul <jeanpaulwebb@gmail.com>
+ * @date 05/07/2024
+ */
 class ConvertEmptyStringsToNull {
   async handle({request}, next) {
     if (Object.keys(request.body).length) {

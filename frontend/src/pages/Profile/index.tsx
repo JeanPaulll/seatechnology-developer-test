@@ -6,7 +6,7 @@ import React from 'react'
  */
 function Profile() {
     return (
-        <div className='under-construction'>Profile</div>
+        <div className='under-construction'>Perfil</div>
     )
 }
 
