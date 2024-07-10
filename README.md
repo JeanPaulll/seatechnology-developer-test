@@ -1,21 +1,6 @@
 # SEA Tecnologia
 
-
-
-<video width="320" height="240" controls>
-  <source src="https://github.com/JeanPaulll/seatechnology-developer-test/blob/main/frontend/images/navegacao.webm" type="video/webm">
-  Seu navegador não suporta o elemento de vídeo.
-</video>
-
-<video width="320" height="240" controls>
-  <source src="./frontend/images/navegacao.webm" type="video/webm">
-  Seu navegador não suporta o elemento de vídeo.
-</video>
-
-
-
-### teste
-<iframe width="560" height="315" src="https://github.com/JeanPaulll/seatechnology-developer-test/blob/main/frontend/images/navegacao.webm" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+![](./frontend/images/apresentacao.gif)
 
 ### Projeto técnico do Processo Seletivo da SEA Tecnologia
 
