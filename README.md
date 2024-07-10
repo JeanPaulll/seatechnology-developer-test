@@ -1,6 +1,10 @@
 # SEA Tecnologia
 
-![](./frontend/images/navegacao.gif)
+<video width="auto" height="240" controls>
+  <source src="./frontend/images/navegacao.webm" type="video/webm">
+  Seu navegador não suporta o elemento de vídeo.
+</video>
+
 ### Projeto técnico do Processo Seletivo da SEA Tecnologia
 
 Este projeto é composto por um front-end e um back-end. O front-end foi desenvolvido em react, e o back-end foi
