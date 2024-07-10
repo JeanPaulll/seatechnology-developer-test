@@ -1,6 +1,6 @@
 # SEA Tecnologia
 
-![](./frontend/images/apresentacao.gif)
+![](./frontend/images/presentation.gif)
 
 ### Projeto técnico do Processo Seletivo da SEA Tecnologia
 
